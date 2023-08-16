@@ -60,7 +60,7 @@ def printTotals(empTotals):
     print(f"Total Number of Employees: {empTotals['TotEmp']}")
     print(f"Total Hours Worked: {empTotals['TotHrs']}")
     print(f"Total Gross Pay: {empTotals['TotGrossPay']:,.2f}")
-    print(f"Total Income Tax: {empTotals['TotTax']:,.2f}")
+    print(f"Total Income Tax: {empTotals['TotTax']:,.1%}")
     print(f"Total Net Pay: {empTotals['TotNetPay']:,.2f}")
 
 def writeEmployeeInformation(employee):
@@ -93,6 +93,7 @@ def readEmployeeInformation(fromDate):
 
     for employee in data:
         employee = [x.strip() for x in employee.strip().split("|")]
+        
         if not condition:
             empDetailList.append([employee[0], employee[1], employee[2], float(employee[3]), float(employee[4]), float(employee[5])])
         else:
@@ -124,9 +125,9 @@ if __name__ == "__main__":
         fromDate = getFromDate()
 
         empDetailList = readEmployeeInformation(fromDate)
-
         print()
         printInfo(empDetailList)
+
         print()
         printTotals(empTotals)
 
