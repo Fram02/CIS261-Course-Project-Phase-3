@@ -119,15 +119,13 @@ if __name__ == "__main__":
         EmpDetail = [fromdate, todate, empname, hours, hourlyrate, taxrate]
         WriteEmployeeInformation(EmpDetail)
 
-   print()
-   print()
-   fromdate = GetFromDate()
+print()
+print()
+fromdate = GetFromDate()
 
-   EmpDetailList = ReadEmployeeInformation(fromdate)
+EmpDetailList = ReadEmployeeInformation(fromdate)
 
-   print()
-   printinfo(EmpDetailList)
-   print()
-   PrintTotals(EmpTotals)
-
-
+print()
+printinfo(EmpDetailList)
+print()
+PrintTotals(EmpTotals)
